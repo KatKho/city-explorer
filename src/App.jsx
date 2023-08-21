@@ -4,6 +4,7 @@ import Map from './components/Map';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.state = {
       searchQuery: '',
       location: null,
+      error: null,
     }
   }
 
@@ -25,10 +27,9 @@ class App extends React.Component {
     console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
-        console.log('SUCCESS: ', response.data);
         this.setState({ location: response.data[0] });
       }).catch(error => {
-        console.log('Nooooo:', error);
+        this.setState({ error: error.response });
       });
   }
 
@@ -54,6 +55,12 @@ class App extends React.Component {
             Explore!
           </Button>
         </Form>
+        {this.state.error && ( 
+          <Alert variant="danger" onClose={() => this.setState({ error: null })} dismissible>
+            <Alert.Heading>Error: {this.state.error.status}</Alert.Heading>
+            <p>{this.state.error.data.error}</p>
+          </Alert>
+        )}
         <Map location={this.state.location} apiKey={API_KEY} />
       </div>
     );
