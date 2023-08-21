@@ -21,7 +21,6 @@ class App extends React.Component {
   // }
 
   handleForm = (e) => {
-    console.log('Form Submitted');
     e.preventDefault();
     console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
@@ -44,17 +43,18 @@ class App extends React.Component {
         <Form onSubmit={this.handleForm}>
           <Form.Group controlId="cityInput">
             <Form.Control
-              type="text"
+              style={{fontFamily: 'Montserrat'}}
+              type="text" 
               placeholder="Enter city name"
               value={this.state.searchQuery}
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit" style={{ marginTop:'10px', backgroundColor: 'black'}}>
+          <Button variant="primary" type="submit" style={{ marginTop:'10px', marginBottom:'10px', backgroundColor: 'black', fontFamily: 'Montserrat'}}>
             Explore!
           </Button>
         </Form>
-        <Map location={this.state.location} />
+        <Map location={this.state.location} apiKey={API_KEY} />
       </div>
     );
   }
