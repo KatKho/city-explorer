@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
 import './App.css'
+import Map from './components/Map';
+import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-function App() {
-  const [count, setCount] = useState(0)
+const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
-  return (
-    <>
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      searchQuery: '',
+      location: null,
+    }
+  }
+
+  // setSearchQuery = (query) => {
+  //   this.setState({searchQuery: query })
+  // }
+
+  handleForm = (e) => {
+    console.log('Form Submitted');
+    e.preventDefault();
+    console.log(API_KEY);
+    axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
+      .then(response => {
+        console.log('SUCCESS: ', response.data);
+        this.setState({ location: response.data[0] });
+      }).catch(error => {
+        console.log('Nooooo:', error);
+      });
+  }
+
+  handleChange = (e) => {
+    this.setState({ searchQuery: e.target.value });
+  }
+
+  render() {
+    return (
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Welcome to City Explorer!</h1>
+        <Form onSubmit={this.handleForm}>
+          <Form.Group controlId="cityInput">
+            <Form.Control
+              type="text"
+              placeholder="Enter city name"
+              value={this.state.searchQuery}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit" style={{ marginTop:'10px', backgroundColor: 'black'}}>
+            Explore!
+          </Button>
+        </Form>
+        <Map location={this.state.location} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
 }
 
-export default App
+export default App;
