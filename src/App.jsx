@@ -55,13 +55,12 @@ class App extends React.Component {
             Explore!
           </Button>
         </Form>
-        {this.state.error && ( 
+        {this.state.error ? ( 
           <Alert variant="danger" onClose={() => this.setState({ error: null })} dismissible>
             <Alert.Heading>Error: {this.state.error.status}</Alert.Heading>
             <p>{this.state.error.data.error}</p>
           </Alert>
-        )}
-        <Map location={this.state.location} apiKey={API_KEY} />
+        ) : <Map location={this.state.location} apiKey={API_KEY} />} 
       </div>
     );
   }
