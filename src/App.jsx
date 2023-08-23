@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
 import Map from './components/Map';
+import Weather from './components/Weather';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -15,19 +16,21 @@ class App extends React.Component {
       searchQuery: '',
       location: null,
       error: null,
+      weather: null,
     }
   }
-
-  // setSearchQuery = (query) => {
-  //   this.setState({searchQuery: query })
-  // }
 
   handleForm = (e) => {
     e.preventDefault();
     console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
-        this.setState({ location: response.data[0] });
+        this.setState({ location: response.data[0], weather: null, searchQuery: ''} )
+        return axios.get(`http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`) 
+      })
+      .then(response => {
+        console.log(response.data);
+        this.setState({ weather: { forecasts: response.data.forecasts }})
       }).catch(error => {
         this.setState({ error: error.response });
       });
@@ -60,7 +63,8 @@ class App extends React.Component {
             <Alert.Heading>Error: {this.state.error.status}</Alert.Heading>
             <p>{this.state.error.data.error}</p>
           </Alert>
-        ) : <Map location={this.state.location} apiKey={API_KEY} />} 
+        ) : (<Map location={this.state.location} apiKey={API_KEY} />) }
+        <Weather weather={this.state.weather} />
       </div>
     );
   }
