@@ -25,8 +25,9 @@ class App extends React.Component {
     console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
-        this.setState({ location: response.data[0], weather: null, searchQuery: ''} )
-        return axios.get(`http://localhost:3001/weather?searchQuery=${this.state.searchQuery}`) 
+        console.log(response.data);
+        this.setState({ location: response.data[0]} )
+        return axios.get(`http://localhost:3001/weather?q=${this.state.searchQuery}&lat=${response.data[0].lat}&lon=${response.data[0].lon}`) 
       })
       .then(response => {
         console.log(response.data);
