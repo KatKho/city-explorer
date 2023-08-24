@@ -45,3 +45,8 @@
 h1, h2, p {
   font-family: Montserrat;
 }
+
+.input-container {
+  height: 250px; /* Adjust the height as needed */
+  transition: height 0.3s; /* Add a smooth transition for height changes */
+}
