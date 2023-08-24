@@ -10,7 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 
 
 
-const SERVER_URL = import.meta.env.EXPRESS_SERVER_URL
+const SERVER_URL = import.meta.env.EXPRESS_SERVER_URL;
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
       .then(response => {
         console.log(response.data);
         this.setState({ location: response.data[0]} )
-        return axios.get(`${SERVER_URL}/weather?q=${this.state.searchQuery}&lat=${response.data[0].lat}&lon=${response.data[0].lon}`) 
+        return axios.get(`${SERVER_URL}/weather?q=${this.state.searchQuery}&lat=${response.data[0].lat}&lon=${response.data[0].lon}`); 
       })
       .then(response => {
         console.log(response.data);
