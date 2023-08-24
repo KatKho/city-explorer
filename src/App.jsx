@@ -10,7 +10,7 @@ import Alert from 'react-bootstrap/Alert';
 
 
 
-const SERVER_URL = import.meta.env.EXPRESS_SERVER_URL;
+const SERVER_URL = import.meta.env.VITE_EXPRESS_SERVER_URL;
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
 class App extends React.Component {
@@ -25,8 +25,14 @@ class App extends React.Component {
     }
   }
 
+
+
   handleForm = (e) => {
     e.preventDefault();
+    if (!SERVER_URL) {
+      console.error("Server URL not set yet");
+      return;
+    }
     console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
