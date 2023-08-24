@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Movie extends React.Component {
     render() {
         let { movies } = this.props;
-        console.log(this.props.movies);
 
         return (
             <section>
