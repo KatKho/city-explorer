@@ -7,9 +7,10 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
+import Row from 'react-bootstrap/Row'; 
+import Col from 'react-bootstrap/Col';
 
 
-//test
 const SERVER_URL = import.meta.env.VITE_EXPRESS_SERVER_URL;
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
@@ -24,8 +25,6 @@ class App extends React.Component {
       movies: null,
     }
   }
-
-
 
   handleForm = (e) => {
     e.preventDefault();
@@ -85,16 +84,23 @@ class App extends React.Component {
             <p>{this.state.error.data.error}</p>
           </Alert>
         ) : (
-          <div className="row">
-            <div className="col-xs-12 col-md-6" style={{marginBottom: '24px'}}>
-              <Map location={this.state.location} apiKey={API_KEY}/>
-            </div>
-            <div className="col-xs-12 col-md-6" style={{marginBottom: '24px'}}>
-              <Weather weather={this.state.weather}/>
-            </div>
-          </div>
+          <div>
+            <Row>
+            {/* Map */}
+            <Col xs={12} md={4}>
+              <Map location={this.state.location} apiKey={API_KEY} />
+            </Col>
+            {/* Weather */}
+            <Col xs={12} md={4} >
+              <Weather weather={this.state.weather} />
+            </Col>
+            {/* Movies*/}
+            <Col xs={12} md={4} >
+              <Movie movies={this.state.movies} />
+            </Col>
+          </Row>
+        </div>
         )}
-        <Movie movies={this.state.movies} />
       </div>
     );
   }
