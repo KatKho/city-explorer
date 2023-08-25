@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Movie extends React.Component {
@@ -10,25 +9,33 @@ class Movie extends React.Component {
 
         return (
             <section>
-                <Row>
-                    {movies && movies.map((movie, index) => (
-                        <Col key={index} xs={12} md={6} lg={4}>
-                            <Card className="mb-4">
-                                <Card.Img variant="top" src={movie.image_url} />
-                                <Card.Body>
-                                    <Card.Title>{movie.title}</Card.Title>
-                                    <Card.Text>{movie.overview}</Card.Text>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <small className="text-muted">
-                                        Released on: {movie.released_on}<br />
-                                        Average Votes: {movie.average_votes}
-                                    </small>
-                                </Card.Footer>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
+                {movies ? (
+                    <Card className="custom-card">
+                        <Card.Body>
+                            <Carousel className="custom-carousel">
+                                {movies.map((movie, index) => (
+                                    <Carousel.Item key={index}>
+                                        <img
+                                            className="d-block w-100"
+                                            src={movie.image_url}
+                                            alt={movie.title}
+                                        />
+                                        <div className="movie-details">
+                                            <Card.Text style={{fontWeight: 'bold', fontSize:'20px'}}>{movie.title}</Card.Text>
+                                            <div className="scrollable-content">
+                                                <Card.Text>{movie.overview}</Card.Text>
+                                                <Card.Text>Released on: {movie.released_on}</Card.Text>
+                                                <Card.Text>Average Votes: {movie.average_votes}</Card.Text>
+                                            </div>
+                                        </div>
+                                    </Carousel.Item>
+                                ))}
+                            </Carousel>
+                        </Card.Body>
+                    </Card>
+                ) : (
+                    null
+                )}
             </section>
         );
     }

@@ -10,9 +10,9 @@ class Map extends React.Component {
         return (
             <section>
                 {location ? (
-                    <Card>
+                    <Card className="custom-card">
                         <Card.Body style={{fontFamily: 'Montserrat'}}>
-                            <Card.Title>City: {location.display_name}</Card.Title>
+                            <Card.Title style={{fontWeight: 'bold', fontSize:'20px'}}>City: {location.display_name}</Card.Title>
                             <Card.Text style={{marginBottom: '8px'}}>Lat: {location.lat}</Card.Text>
                             <Card.Text>Long: {location.lon}</Card.Text>
                         </Card.Body>

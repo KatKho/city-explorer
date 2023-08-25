@@ -10,13 +10,13 @@ class Weather extends React.Component {
         return (
             <section>
                 {weather ? (
-                    <Card>
+                    <Card className="custom-card">
                         <Card.Body style={{fontFamily: 'Montserrat'}}>
-                            <Card.Text>Forecasts:</Card.Text>
+                            <Card.Text style={{fontWeight: 'bold', fontSize:'20px'}}>Forecasts:</Card.Text>
                             <ul style={{ listStyleType: 'none', padding: 0 }}>
                                 {weather.forecasts.map((forecast, index) => (
                                     <li key={index}>
-                                        Date: {forecast.data}, Description: {forecast.description}
+                                        Date: {forecast.date}, Description: {forecast.description}
                                     </li>
                                 ))}
                             </ul>
