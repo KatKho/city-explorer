@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import './App.css';
 import Map from './components/Map';
 import Weather from './components/Weather';
 import Movie from './components/Movie';
@@ -32,7 +32,6 @@ class App extends React.Component {
       console.error("Server URL not set yet");
       return;
     }
-    console.log(API_KEY);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
         console.log(response.data);
