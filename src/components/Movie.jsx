@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//test 
 class Movie extends React.Component {
     render() {
         let { movies } = this.props;
