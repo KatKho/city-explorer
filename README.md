@@ -1,7 +1,7 @@
 # CITY_EXPLORER
 
 A React application that uses the Axios library to make user-initiated requests for data from a third-party API.
-
+*[Deployed link](https://city-explorer-kat.netlify.app/)*
 ## Getting Started
 
 Name of feature: City-explorer
