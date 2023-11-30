@@ -1,71 +1,77 @@
-# CITY_EXPLORER
 
-A React application that uses the Axios library to make user-initiated requests for data from a third-party API.
+# City Explorer
 
-[Deployed link](https://city-explorer-kat.netlify.app/)
+City Explorer is an engaging web application that enhances urban exploration with real-time information. It provides detailed maps, current weather forecasts, and showcases movies featuring selected cities. Built with React.js and Bootstrap, and supported by Express.js, City Explorer brings city exploration to life.
 
-## Getting Started
+## Live Demo
 
-Name of feature: City-explorer
+Experience City Explorer in action: [Live Demo on Netlify](https://city-explorer-kat.netlify.app/)
 
-Estimate of time needed to complete: 2hrs
+## Version
 
-Start time: 2:14 pm
+Current version: v1.0
 
-Finish time: 4:09 pm
+## Features
 
-Actual time needed to complete: 1 hr 55 min
+- **Dynamic City Mapping**: Interactive maps providing detailed layouts of cities.
+- **Real-Time Weather Forecasts**: Up-to-date weather information for your selected city.
+- **Movie Carousel**: A unique carousel showcasing movies related to the city.
+- **Intuitive User Interface**: A user-friendly interface designed for ease of use and engagement.
 
-### Requirements
+## Installation
 
-For development, you will only need Node.js installed on your environment.
-And please use the appropriate [Editorconfig](http://editorconfig.org/) plugin for your Editor (not mandatory).
+Get started with City Explorer using the following steps:
 
-#### Node
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/KatKho/city-explorer.git
+   ```
 
-[Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
-You should be able to run the following command after the installation procedure
-below.
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd city-explorer
+   ```
 
-    $ node --version
-    v0.10.24
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-    $ npm --version
-    1.3.21
+4. **Environment Configuration**:
+   - Create a `.env` file in the project root.
+   - Add the following environment variables:
+     ```
+     VITE_LOCATIONIQ_API_KEY=your_locationiq_api_key_here
+     VITE_EXPRESS_SERVER_URL=your_express_server_url_here
+     ```
 
-### Install
+5. **Run the App**:
+   ```bash
+   npm start
+   ```
 
-    git clone https://github.com/ORG/PROJECT.git
-    cd PROJECT
-    npm install
+## Domain Modeling
 
-### Configure app
+![Domain Modeling](./src/assets/Domain.png)
 
-Any environment configuration steps.
+## Technology Stack
 
-### Start & watch
+- **React.js**: A robust front-end library for building user interfaces.
+- **Bootstrap**: For responsive and attractive UI components.
+- **Express.js**: Back-end framework for handling API requests.
 
-    npm run dev
-    npm start
+## App Structure
 
-### Simple build for production
+Here's a quick overview of the main components:
 
-    npm run build
+- **Maps**: Displays detailed maps of cities.
+- **Weather**: Shows current weather information.
+- **Movies**: Carousel of movies related to the city.
+- **Styles**: Contains all styling files for the application.
+- **API**: Handles all external API requests and interactions.
 
-**Author**: Ekaterina Khoroshilova
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+## Contact
 
-## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+For any inquiries or contributions, feel free to contact:
 
-## Architecture
-
-![Lab 06](src/assets/LAB06.png)
-
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
-
-## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+- [Ekaterina Khoroshilova](https://www.linkedin.com/in/ekaterina-khoroshilova)
