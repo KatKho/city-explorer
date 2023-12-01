@@ -3,6 +3,11 @@
 
 City Explorer is an engaging web application that enhances urban exploration with real-time information. It provides detailed maps, current weather forecasts, and showcases movies featuring selected cities. Built with React.js and Bootstrap, and supported by Express.js, City Explorer brings city exploration to life.
 
+## Upcoming Features
+
+Yelp API Integration: I plan on integrating the Yelp API into City Explorer. This new feature aims to enhance the user experience by providing rich information about local businesses, events, and activities in the cities they explore. With Yelp's extensive database, users will be able to discover and plan their city visits more effectively.
+
+
 ## Live Demo
 
 Experience City Explorer in action: [Live Demo on Netlify](https://city-explorer-kat.netlify.app/)
