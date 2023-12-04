@@ -15,7 +15,7 @@ class Movie extends React.Component {
                         <Card.Body>
                             <Carousel className="custom-carousel">
                                 {movies.map((movie, index) => (
-                                    <Carousel.Item key={index}>
+                                    <Carousel.Item key={index} interval={5000}>
                                         <img
                                             className="d-block w-100"
                                             src={movie.image_url || defaultImageUrl}
