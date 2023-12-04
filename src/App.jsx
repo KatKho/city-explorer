@@ -10,7 +10,6 @@ import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row'; 
 import Col from 'react-bootstrap/Col';
 
-//test
 const SERVER_URL = import.meta.env.VITE_EXPRESS_SERVER_URL;
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
 
@@ -72,7 +71,7 @@ class App extends React.Component {
           <Button
             variant="primary"
             type="submit"
-            style={{ marginTop: '10px', marginBottom: '10px', backgroundColor: 'black', fontFamily: 'Montserrat' }}
+            style={{ marginTop: '10px', marginBottom: '10px', backgroundColor: 'black', borderColor: 'black', fontFamily: 'Montserrat' }}
           >
             Explore!
           </Button>
