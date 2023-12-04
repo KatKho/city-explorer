@@ -23,6 +23,10 @@ Current version: v1.0
 - **Movie Carousel**: A unique carousel showcasing movies related to the city.
 - **Intuitive User Interface**: A user-friendly interface designed for ease of use and engagement.
 
+## Usage Limitations
+
+Please note that City Explorer has a limitation of 50 weather and movie API requests per 24 hours. If you encounter issues with the application not working as expected, it may be due to reaching this limit. I recommend waiting until the 24-hour period has passed or consider upgrading your API plan if you require more frequent access to weather and movie data.
+
 ## Installation
 
 Get started with City Explorer using the following steps:
