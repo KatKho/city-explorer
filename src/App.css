@@ -92,3 +92,7 @@ h1, h2, p {
   height: 300px; 
   object-fit:contain; 
 }
+
+#map {
+  height: 355px; 
+}
