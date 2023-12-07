@@ -18,7 +18,7 @@ const MapView = ({ center }) => {
     const map = useMap();
   
     React.useEffect(() => {
-      map.invalidateSize(); // This will force the map to recalculate its size
+      map.invalidateSize(); 
       map.setView(center, map.getZoom());
     }, [center, map]);
   

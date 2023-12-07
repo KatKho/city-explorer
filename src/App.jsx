@@ -69,7 +69,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="newspaper">
         <h1>Welcome to City Explorer!</h1>
         <Form onSubmit={this.handleForm}>
           <Form.Group controlId="cityInput">
@@ -98,15 +98,15 @@ class App extends React.Component {
           <div>
             <Row>
             {/* Map */}
-            <Col xs={12} md={4}>
+            <Col md={4}>
               <Map location={this.state.location} apiKey={API_KEY} />
             </Col>
             {/* Weather */}
-            <Col xs={12} md={4} >
+            <Col md={4} >
               <Weather weather={this.state.weather} />
             </Col>
             {/* Movies*/}
-            <Col xs={12} md={4} >
+            <Col md={4} >
               <Movie movies={this.state.movies} />
             </Col>
           </Row>

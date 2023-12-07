@@ -3,18 +3,25 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
-.card {
+/* .card {
   padding: 1em;
   height: 350px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+} */
+
+.custom-card {
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -25,7 +32,6 @@
   flex-direction: column;
   height: 100%;
 }
-
 
 .read-the-docs {
   color: #888;
@@ -45,21 +51,21 @@ h1, h2, p {
 }
 
 .scrollable-content::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
+  width: 10px; 
 }
 
 .scrollable-content::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Track color */
+  background: #f1f1f1;
   border-radius: 5px;
 }
 
 .scrollable-content::-webkit-scrollbar-thumb {
-  background: #888; /* Thumb color */
+  background: #888;
   border-radius: 5px;
 }
 
 .scrollable-content::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Thumb color on hover */
+  background: #555; 
 }
 
 .custom-carousel .d-block {
@@ -70,6 +76,7 @@ h1, h2, p {
 
 #map {
   height: 355px; 
+  border-bottom: 2px solid #000;
 }
 
 
@@ -97,8 +104,6 @@ h1, h2, p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
 }
-
-
 
 .event-image {
   width: 100%;
@@ -143,12 +148,6 @@ h1, h2, p {
   }
 }
 
-@media (max-width: 480px) {
-  .event-card {
-    width: 100%; /* Full width on very small screens */
-  }
-}
-
 
 .events-slide {
   display: flex;
@@ -186,12 +185,86 @@ a {
   filter: invert(36%) sepia(95%) saturate(750%) hue-rotate(198deg) brightness(93%) contrast(89%);
 }
 
-h2 {
-  padding-top: 1.5rem;
-}
 
 .event-footer {
   border-top: 1px solid #ddd; 
   padding: 10px 15px;
   background: #f8f9fa; 
 }
+
+/* Newspaper-like background and font styling */
+body, h1, h2, p, .card-title, .card-text {
+  background: #f8f8f8;
+  color: #333;
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+}
+
+/* Typography for headers to mimic newspaper headlines */
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Style for the main container to center content */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: white; /* Use a white background to mimic paper */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to give depth like a paper */
+}
+
+/* Card styles to look like newspaper articles */
+.custom-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0; /* Newspapers typically don't have rounded corners on articles */
+}
+
+/* Event card specific styles */
+.event-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0;
+}
+
+/* Weather and Movie sections styled as newspaper columns */
+.custom-card .card-body {
+  padding: 1rem;
+  border-bottom: 2px solid #000; /* Bold line to separate header from content like newspapers */
+}
+
+/* Event details like a newspaper article */
+.event-details {
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+}
+
+/* Footer styled like a newspaper footer */
+.event-footer {
+  background: #f0f0f0; /* Slightly different color to distinguish footer */
+  border-top: 2px solid #000; /* Bold line to separate content from footer like newspapers */
+  padding: 0.5rem 1rem;
+}
+
+/* Media queries for responsive newspaper columns */
+@media (max-width: 768px) {
+  .event-card {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Carousel styles to match newspaper look */
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  filter: none; /* Remove filters to keep the icons black and white */
+}
+
