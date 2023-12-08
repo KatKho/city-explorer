@@ -37,8 +37,8 @@ class Map extends React.Component {
               <Card.Title style={{ fontWeight: 'bold', fontSize: '20px' }}>
                 City: {location.display_name}
               </Card.Title>
-              <Card.Text style={{ marginBottom: '8px' }}>Lat: {location.lat}</Card.Text>
-              <Card.Text>Long: {location.lon}</Card.Text>
+              <Card.Text style={{ marginBottom: '8px' }}><strong>Lat: </strong>{location.lat}</Card.Text>
+              <Card.Text><strong>Long: </strong>{location.lon}</Card.Text>
             </Card.Body>
             <div id="map">
               <MapContainer center={[location.lat, location.lon]} zoom={12} style={{ height: '100%', width: '100%' }}>

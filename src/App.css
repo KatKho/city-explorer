@@ -3,28 +3,16 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
+  background: white; 
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); 
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-
-/* .card {
-  padding: 1em;
-  height: 350px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-} */
 
 .custom-card {
   height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
+  margin-bottom: 1.5rem;
 }
 
 .card-body {
@@ -115,7 +103,7 @@ h1, h2, p {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* This will push the footer to the bottom inside the details *//* This ensures that the details take full height of the card */
+  justify-content: space-between; 
 }
 
 .event-name {
@@ -141,14 +129,6 @@ h1, h2, p {
   font-weight: bold;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .event-card {
-    width: calc(50% - 20px); /* Two items per row on smaller screens */
-  }
-}
-
-
 .events-slide {
   display: flex;
   margin-top: 10px;
@@ -162,12 +142,10 @@ a {
   font-size: 14px;
 }
 
-
 .events-carousel .carousel-control-prev,
 .events-carousel .carousel-control-next {
   width: 5%; 
 }
-
 
 .events-carousel .carousel-control-prev {
   left: calc(-5% - 1rem); 
@@ -177,7 +155,6 @@ a {
   right: calc(-5% - 1rem); 
 }
 
-
 .events-carousel .carousel-control-prev-icon,
 .events-carousel .carousel-control-next-icon {
   width: 3rem;
@@ -185,14 +162,12 @@ a {
   filter: invert(36%) sepia(95%) saturate(750%) hue-rotate(198deg) brightness(93%) contrast(89%);
 }
 
-
 .event-footer {
   border-top: 1px solid #ddd; 
   padding: 10px 15px;
   background: #f8f9fa; 
 }
 
-/* Newspaper-like background and font styling */
 body, h1, h2, p, .card-title, .card-text {
   background: #f8f8f8;
   color: #333;
@@ -200,7 +175,6 @@ body, h1, h2, p, .card-title, .card-text {
   line-height: 1.6;
 }
 
-/* Typography for headers to mimic newspaper headlines */
 h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -212,59 +186,44 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Style for the main container to center content */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background: white; /* Use a white background to mimic paper */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to give depth like a paper */
-}
 
-/* Card styles to look like newspaper articles */
 .custom-card {
   background: white;
   border: 1px solid #ddd;
-  border-radius: 0; /* Newspapers typically don't have rounded corners on articles */
+  border-radius: 0;
 }
 
-/* Event card specific styles */
 .event-card {
   background: white;
   border: 1px solid #ddd;
   border-radius: 0;
 }
 
-/* Weather and Movie sections styled as newspaper columns */
 .custom-card .card-body {
   padding: 1rem;
-  border-bottom: 2px solid #000; /* Bold line to separate header from content like newspapers */
+  border-bottom: 2px solid #000; 
 }
 
-/* Event details like a newspaper article */
 .event-details {
   border-top: 1px solid #ddd;
   padding: 1rem;
 }
 
-/* Footer styled like a newspaper footer */
 .event-footer {
-  background: #f0f0f0; /* Slightly different color to distinguish footer */
-  border-top: 2px solid #000; /* Bold line to separate content from footer like newspapers */
+  background: #f0f0f0;
+  border-top: 2px solid #000; 
   padding: 0.5rem 1rem;
 }
 
-/* Media queries for responsive newspaper columns */
+.weather-icon {
+  width: 34px;
+  height: 34px;
+}
+
 @media (max-width: 768px) {
   .event-card {
-    width: 100%; /* Full width on smaller screens */
+    width: 100%; 
   }
 }
 
-/* Carousel styles to match newspaper look */
-.custom-carousel .carousel-control-prev-icon,
-.custom-carousel .carousel-control-next-icon {
-  filter: none; /* Remove filters to keep the icons black and white */
-}
 

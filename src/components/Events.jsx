@@ -32,9 +32,6 @@ const Events = ({ events }) => {
                 <img src={event.image_url} alt={event.name} className="event-image"/>
                 <div className="event-details">
                   <h3 className="event-name">{event.name}</h3>
-                  {/* <p className="event-description">{event.description}</p> */}
-                    {/* <div> */}
-                    {/* </div> */}
                     <div className="event-footer">
                     <a href={event.event_site_url} target="_blank" rel="noopener noreferrer" className="event-link">Event Details</a>
                     <div className="event-info">
