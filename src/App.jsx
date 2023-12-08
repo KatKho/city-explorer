@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Row from 'react-bootstrap/Row'; 
 import Col from 'react-bootstrap/Col';
+import Events from './components/Events';
+
 
 const SERVER_URL = import.meta.env.VITE_EXPRESS_SERVER_URL;
 const API_KEY = import.meta.env.VITE_LOCATIONIQ_API_KEY;
@@ -22,15 +24,18 @@ class App extends React.Component {
       error: null,
       weather: null,
       movies: null,
+      events: null,
     }
   }
 
   handleForm = (e) => {
     e.preventDefault();
+    console.log(`Server URL: ${SERVER_URL}`);
     if (!SERVER_URL) {
       console.error("Server URL not set yet");
       return;
     }
+    console.log(`Search Query: ${this.state.searchQuery}`);
     axios.get(`https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${this.state.searchQuery}&format=json`)
       .then(response => {
         console.log(response.data);
@@ -44,8 +49,16 @@ class App extends React.Component {
       })
       .then(response => {
         console.log(response.data);
-        this.setState({ movies: response.data }) 
-      }).catch(error => {
+        this.setState({ movies: response.data });
+      const currentDate = Math.floor(Date.now() / 1000); // Get the current date as Unix timestamp
+      console.log()
+      return axios.get(`${SERVER_URL}/events?location=${this.state.searchQuery}&start_date=${currentDate}`);
+    })
+    .then(response => {
+        console.log(response.data);
+        this.setState({ events: response.data }); 
+      })
+      .catch(error => {
         this.setState({ error: error.response });
       });
   }
@@ -56,7 +69,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="newspaper">
         <h1>Welcome to City Explorer!</h1>
         <Form onSubmit={this.handleForm}>
           <Form.Group controlId="cityInput">
@@ -85,18 +98,22 @@ class App extends React.Component {
           <div>
             <Row>
             {/* Map */}
-            <Col xs={12} md={4}>
+            <Col md={4}>
               <Map location={this.state.location} apiKey={API_KEY} />
             </Col>
             {/* Weather */}
-            <Col xs={12} md={4} >
+            <Col md={4} >
               <Weather weather={this.state.weather} />
             </Col>
             {/* Movies*/}
-            <Col xs={12} md={4} >
+            <Col md={4} >
               <Movie movies={this.state.movies} />
             </Col>
           </Row>
+            {/* Events */}
+            <Row>
+              <Events events={this.state.events} />
+            </Row>
         </div>
         )}
       </div>
