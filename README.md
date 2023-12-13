@@ -1,11 +1,7 @@
 
 # City Explorer
 
-City Explorer is an engaging web application that enhances urban exploration with real-time information. It provides detailed maps, current weather forecasts, and showcases movies featuring selected cities. Built with React.js and Bootstrap, and supported by Express.js, City Explorer brings city exploration to life.
-
-## Upcoming Features
-
-Yelp API Integration: I plan on integrating the Yelp API into City Explorer. This new feature aims to enhance the user experience by providing rich information about local businesses, events, and activities in the cities they explore. With Yelp's extensive database, users will be able to discover and plan their city visits more effectively.
+City Explorer is an engaging web application that enhances urban exploration with real-time information. It provides detailed maps, current weather forecasts, a curated selection of movies, and popular events in the city. Built with React.js and Bootstrap, and supported by Express.js, City Explorer brings city exploration to life.
 
 ## Live Demo
 
@@ -13,18 +9,19 @@ Experience City Explorer in action: [Live Demo on Netlify](https://city-explorer
 
 ## Version
 
-Current version: v1.0
+The application is currently at version 1.1, featuring Yelp API integration for events.
 
 ## Features
 
-- **Dynamic City Mapping**: Interactive maps providing detailed layouts of cities.
-- **Real-Time Weather Forecasts**: Up-to-date weather information for your selected city.
-- **Movie Carousel**: A unique carousel showcasing movies related to the city.
-- **Intuitive User Interface**: A user-friendly interface designed for ease of use and engagement.
+- **Interactive City Maps**: Navigate through detailed maps for insights into city layouts.
+- **Live Weather Updates**: Get up-to-date weather forecasts for your city of interest.
+- **City-Inspired Movie Carousel**: Discover films related to the city you're exploring.
+- **Popular Local Events**: Find out about the most popular events happening in the city, powered by the Yelp API.
+- **User-Friendly Design**: Engage with an intuitive interface designed for ease of navigation and interaction.
 
 ## Usage Limitations
 
-Please note that City Explorer has a limitation of 50 weather and movie API requests per 24 hours. If you encounter issues with the application not working as expected, it may be due to reaching this limit. I recommend waiting until the 24-hour period has passed or consider upgrading your API plan if you require more frequent access to weather and movie data.
+Please note that City Explorer has a limitation of 50 weather API requests per 24 hours. If you encounter issues with the application not working as expected, it may be due to reaching this limit. I recommend waiting until the 24-hour period has passed or consider upgrading your API plan if you require more frequent access to weather and movie data.
 
 ## Installation
 
@@ -75,8 +72,7 @@ Here's a quick overview of the main components:
 - **Maps**: Displays detailed maps of cities.
 - **Weather**: Shows current weather information.
 - **Movies**: Carousel of movies related to the city.
-- **Styles**: Contains all styling files for the application.
-- **API**: Handles all external API requests and interactions.
+- **Events**: Information on popular local events sourced from Yelp.
 
 ## Contact
 
