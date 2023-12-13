@@ -57,7 +57,7 @@ Get started with City Explorer using the following steps:
 
 ## Domain Modeling
 
-![Domain Modeling](./src/assets/Domain.png)
+![Domain Modeling](./src/assets/Domain-model.png)
 
 ## Technology Stack
 
