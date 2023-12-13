@@ -11,6 +11,13 @@ Experience City Explorer in action: [Live Demo on Netlify](https://city-explorer
 
 The application is currently at version 1.1, featuring Yelp API integration for events.
 
+- Version 1
+![Version 1](./src/assets/p1.png)
+
+- Version 1.1
+![Version 1](./src/assets/p1-1.png)
+![Version 1](./src/assets/p2-1.png)
+
 ## Features
 
 - **Interactive City Maps**: Navigate through detailed maps for insights into city layouts.
