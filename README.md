@@ -15,8 +15,7 @@ The application is currently at version 1.1, featuring Yelp API integration for 
 ![Version 1](./src/assets/p1.png)
 
 - Version 1.1
-![Version 1](./src/assets/p1-1.png)
-![Version 1](./src/assets/p2-1.png)
+![Version 1](./src/assets/p2.png)
 
 ## Features
 
